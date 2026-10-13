@@ -1,314 +1,406 @@
-<html lang="ar" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Islam Anwar - Portfolio</title>
+    <title>المهندسة إسلام الفجم | حلول الويب والذكاء الاصطناعي</title>
   </head>
   <body>
     <style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-  background-color: #f3f2f7;
-}
+      :root {
+        --bg-color: #f8f9fa;
+        --card-bg: #ffffff;
+        --primary: #d97706; /* برتقالي هادي ودافئ */
+        --primary-hover: #b45309;
+        --text-main: #2d3748;
+        --text-muted: #718096;
+        --border-color: #e2e8f0;
+      }
 
-/* Navbar */
-#navbar {
-  background-color: #fe6601;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 10;
-  white-space: nowrap;
-}
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Cairo', Tahoma, Arial, sans-serif;
+        width: 100%;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        direction: rtl;
+        text-align: right;
+      }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 5%;
-  width: 90%;
-  margin: 0 auto;
-}
+      /* Navbar */
+      #navbar {
+        background-color: #ffffff;
+        color: var(--text-main);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
 
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 1rem;
-  font-size: 1.2em;
-  transition: color 0.3s;
-}
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-.nav-links a:hover {
-  color: #292929;
-}
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
 
-.logo h1 {
-  margin: 0;
-  font-size: 1.5em;
-  color: #fff;
-}
+      .nav-links a {
+        color: var(--text-main);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.1em;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
 
-/* Welcome section */
-#welcome-section {
-  background: linear-gradient(to bottom, #fe6601 20%, #ffa600 60%, #f3f2f7 89%, #f3f2f7 100%);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding: 0 10%;
-}
+      .nav-links a:hover {
+        color: var(--primary);
+      }
 
-#welcome-section h1 {
-  font-size: 3.5em;
-  margin: 0;
-  color: #fff;
-  line-height: 1.4;
-}
+      .logo h1 {
+        margin: 0;
+        font-size: 1.4em;
+        color: var(--primary);
+      }
 
-.mango {
-  width: 50px;
-  display: inline-block;
-  margin: 0 10px;
-  vertical-align: middle;
-}
+      /* Welcome section */
+      #welcome-section {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 80px 10% 40px;
+      }
 
-/* Projects section */
-#projects {
-  padding: 6% 5% 4%;
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #f3f2f7;
-  color: #292929;
-}
+      #welcome-section h1 {
+        font-size: 2.8em;
+        margin: 0 0 15px 0;
+        color: #1a202c;
+        line-height: 1.5;
+      }
 
-.section-header h3 {
-  font-size: 3rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 2px solid rgb(219, 219, 219);
-}
+      #welcome-section p {
+        font-size: 1.3em;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+      }
 
-.project-tiles {
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-.project-tile {
-  background-color: #fff;
-  border-radius: 10px;
-  width: 30%;
-  min-width: 280px;
-  padding: 1.5em;
-  text-align: center;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+      .btn-main {
+        background-color: var(--primary);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 4px 10px rgba(217, 119, 6, 0.2);
+        display: inline-block;
+      }
 
-.project-tile img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  height: 180px;
-  margin-bottom: 1rem;
-}
+      .btn-main:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+      }
 
-.project-tile h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.4em;
-  color: #fe6601;
-}
+      .btn-secondary {
+        background-color: #ffffff;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        padding: 10px 28px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+        display: inline-block;
+      }
 
-.project-tile p {
-  margin-bottom: 1.5em;
-  font-size: 1em;
-  color: #555;
-}
+      .btn-secondary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
 
-.project-link {
-  text-decoration: none;
-  background-color: #fe6601;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
-  display: inline-block;
-}
+      /* Sections General */
+      section {
+        padding: 80px 5% 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-.project-link:hover {
-  background-color: #d65500;
-}
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-/* Contact section */
-#contact {
-  width: 100%;
-  min-height: 80vh;
-  background-color: #ff9945;
-  padding-bottom: 4rem;
-}
+      .section-header h3 {
+        font-size: 2.5rem;
+        color: var(--text-main);
+        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+      }
 
-#contact h1 {
-  width: 100%;
-  margin: 0;
-  padding-top: 5rem;
-  padding-bottom: 2rem;
-  color: white;
-  text-align: center;
-  font-size: 2.5em;
-}
+      .section-header h3::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary);
+        border-radius: 2px;
+      }
 
-#get-in-touch {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  padding: 0 2rem;
-}
+      /* Grid Cards */
+      .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
 
-.links-wrapper, .contact-details {
-  background-color: #fe6601;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-  color: white;
-  text-align: center;
-  min-width: 280px;
-}
+      .card {
+        background-color: var(--card-bg);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-.icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 1rem;
-}
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      }
 
-.icons img, .contact-details-icon {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s;
-}
+      .card h3 {
+        color: var(--text-main);
+        font-size: 1.4em;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
 
-.icons img:hover {
-  transform: scale(1.1);
-}
+      .card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
 
-.contact-details-info a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-}
+      /* Highlight Portfolio Banner */
+      .portfolio-banner {
+        background: #ffffff;
+        border: 2px solid #fef3c7;
+        border-radius: 16px;
+        padding: 40px;
+        text-align: center;
+        margin-bottom: 50px;
+        box-shadow: 0 10px 30px rgba(217, 119, 6, 0.08);
+      }
 
-.contact-details-info a:hover {
-  text-decoration: underline;
-}
+      .portfolio-banner h4 {
+        font-size: 1.8em;
+        color: var(--primary);
+        margin: 0 0 15px 0;
+      }
 
-@media screen and (max-width: 768px) {
-  #welcome-section h1 {
-    font-size: 2.2em;
-  }
-  .project-tile {
-    width: 100%;
-  }
-}
+      .portfolio-banner p {
+        font-size: 1.1em;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+      }
+
+      /* Special Student Section Badge */
+      .badge-student {
+        background-color: #fef3c7;
+        color: #92400e;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      /* Contact Section */
+      #contact {
+        background-color: #ffffff;
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+      }
+
+      .contact-box {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .contact-card {
+        background-color: var(--bg-color);
+        padding: 30px 40px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        min-width: 250px;
+      }
+
+      .contact-card a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .contact-card a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          gap: 15px;
+        }
+        #welcome-section h1 {
+          font-size: 2em;
+        }
+      }
     </style>
 
     <!-- Navbar section -->
     <nav id="navbar">
       <div class="container">
         <div class="logo">
-          <h1>Islam Anwar</h1>
+          <h1>المهندسة إسلام الفجم</h1>
         </div>
         <div class="nav-links">
-          <a href="#welcome-section">Welcome</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#welcome-section">الرئيسية</a>
+          <a href="#portfolio">البورتفوليو الحي</a>
+          <a href="#services">الخدمات</a>
+          <a href="#students">خدمات الطلاب</a>
+          <a href="#contact">تواصل معنا</a>
         </div>
       </div>
     </nav>
 
     <!-- Welcome section -->
     <section id="welcome-section">
-      <h1>Hello! <img class="mango" src="https://cdn-icons-png.flaticon.com/512/2339/2339864.png" alt=""> <br>
-        I am Islam Anwar <br>
-        A Web Developer & AI Growth Partner</h1>
+      <h1>هندسة وتطوير الويب <br>بأعلى معايير الجودة والاحترافية</h1>
+      <p>شريكتكِ التقنية لنمو المتاجر الإلكترونية وحلول الويب المخصصة ودعم الطلاب.</p>
+      <div class="hero-buttons">
+        <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="btn-main">🔗 استعراض البورتفوليو الحي</a>
+        <a href="https://wa.me/970594797110" target="_blank" class="btn-secondary">تواصل عبر واتساب</a>
+      </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="section-header">
-        <h3>My Projects</h3>
+    <!-- Portfolio Banner Section -->
+    <section id="portfolio" style="padding-bottom: 20px;">
+      <div class="portfolio-banner">
+        <h4>🔗 نماذج من أعمالي وبورتفوليو حي متكامل</h4>
+        <p>يمكنكِ استعراض منصة متجر إلكتروني تفاعلية وحية (D2C) مصممة ومطورة بتقنيات الويب الحديثة وتجربة تسوق متكاملة:</p>
+        <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="btn-main" style="font-size: 1.1em;">زيارة المعاينة الحية للبورتفوليو 🚀</a>
       </div>
-      <div class="project-tiles">
-        
-        <div class="project-tile">
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="section-header">
+        <h3>خدماتي الاحترافية</h3>
+      </div>
+      <div class="grid-cards">
+        <div class="card">
           <div>
-            <img src="https://m.media-amazon.com/images/S/aplus-media/vc/1d3bb7e0-becf-4b30-8797-e6f232cfb747.__CR0,0,1464,600_PT0_SX1464_V1___.png" alt="E-Commerce D2C Platform">
-            <h3>E-Commerce D2C Platform</h3>
-            <p>Fully functional, highly responsive E-Commerce clothing store platform optimized for mobile UI/UX and seamless conversion rates.</p>
+            <h3>تطوير وتصميم واجهات الويب</h3>
+            <p>بناء وتطوير مواقع ويب متجاوبة وسريعة باستخدام أحدث التقنيات (React, HTML/CSS, JavaScript) وتجربة مستخدم مثالية.</p>
           </div>
-          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="project-link">Live Demo >></a>
+          <a href="https://wa.me/970594797110" class="btn-main" style="text-align: center; padding: 8px 20px;">اطلب الخدمة</a>
         </div>
         
-        <div class="project-tile">
+        <div class="card">
           <div>
-            <img src="https://cdn.dribbble.com/users/2985218/screenshots/11007223/media/8aa92a8c7b96f2ddeef9e824b9349837.gif" alt="AI Growth Systems">
-            <h3>AI Growth & CRO Solutions</h3>
-            <p>Customized AI-driven growth strategies, automated product workflows, and interactive video-generation solutions for digital brands.</p>
+            <h3>تحسين المتاجر وزيادة المبيعات (CRO)</h3>
+            <p>تحليل مسارات الشراء للمتاجر الإلكترونية، تقليل التخلي عن سلة التسوق، وتحسين معدلات التحويل لزيادة العوائد والأرباح.</p>
           </div>
-          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="project-link">Live Demo >></a>
+          <a href="https://wa.me/970594797110" class="btn-main" style="text-align: center; padding: 8px 20px;">اطلب الخدمة</a>
         </div>
-        
-        <div class="project-tile">
+
+        <div class="card">
           <div>
-            <img src="https://www.google.com/logos/2023/boba/rc3/cta.gif" alt="Web Architecture">
-            <h3>Full-Stack Web Solutions</h3>
-            <p>Modern frontend engineering, responsive web designs, performance tuning, and optimized deployment via Netlify.</p>
+            <h3>دمج حلول الذكاء الاصطناعي للمتاجر</h3>
+            <p>إدارة سير عمل المحتوى التلقائي، وصف المنتجات الذكي، وتوليد استراتيجيات نمو متقدمة للعلامات التجارية.</p>
           </div>
-          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="project-link">Live Demo >></a>
+          <a href="https://wa.me/970594797110" class="btn-main" style="text-align: center; padding: 8px 20px;">اطلب الخدمة</a>
         </div>
-        
+      </div>
+    </section>
+
+    <!-- Students Services Section -->
+    <section id="students" style="background-color: #fffbeb55;">
+      <div class="section-header">
+        <h3>خدمات وعروض خاصة للطلاب</h3>
+      </div>
+      <div class="grid-cards">
+        <div class="card">
+          <div>
+            <span class="badge-student">خصم خاص للطلاب</span>
+            <h3>مشاريع التخرج البرمجية</h3>
+            <p>مساعدة هندسية وبرمجية متكاملة لطلاب تكنولوجيا المعلومات وهندسة البرمجيات في تصميم وتنفيذ مشاريع تخرجهم بدقة عالية وتوثيق كامل.</p>
+          </div>
+          <a href="https://wa.me/970594797110?text=مرحباً، أستفسر عن مساعدة في مشروع تخرج" target="_blank" class="btn-main" style="text-align: center; padding: 8px 20px;">استفسر الآن</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <span class="badge-student">جلسات توجيهية</span>
+            <h3>الإرشاد الأكاديمي والتقني</h3>
+            <p>دروس خصوصية وجلسات تبسيط مفاهيم البرمجة، تصميم الواجهات، وتعلم أساسيات الويب لتجاوز الصعوبات الأكاديمية بثقة.</p>
+          </div>
+          <a href="https://wa.me/970594797110?text=مرحباً، أرغب بحجز جلسة توجيهية برمجية" target="_blank" class="btn-main" style="text-align: center; padding: 8px 20px;">احجز جلستك</a>
+        </div>
       </div>
     </section>
 
     <!-- Connect Section -->
     <section id="contact">
-      <h1>Get In Touch</h1>
-      <div id="get-in-touch">
+      <div class="section-header">
+        <h3>تواصل معي مباشرة</h3>
+      </div>
+      <p style="color: var(--text-muted); margin-top: -30px; margin-bottom: 40px;">يسعدني استقبال استفساراتكم وطلب الخدمات عبر القنوات التالية:</p>
+      <div class="contact-box">
+        <div class="contact-card">
+          <p style="margin-top:0; font-weight:bold;">راسلني عبر واتساب</p>
+          <a href="https://wa.me/970594797110" target="_blank">+970 594 797 110</a>
+        </div>
         
-        <div class="links-wrapper">
-          <h3>Connect with me</h3>
-          <div class="icons">
-            <a href="https://www.linkedin.com/in/المهندسة-اسلام-الفجم-5207503b5" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/72px-LinkedIn_icon_circle.svg.png" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/eslam-anwar1" target="_blank">
-              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github">
-            </a>
-          </div>
+        <div class="contact-card">
+          <p style="margin-top:0; font-weight:bold;">حسابي المهني</p>
+          <a href="https://www.linkedin.com/in/%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D8%A3%D8%B3%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%81%D8%AC%D9%85-5207503b5/?isSelfProfile=false" target="_blank">LinkedIn Profile</a>
         </div>
 
-        <div class="contact-details">
-          <h3>Direct Email</h3>
-          <div class="contact-details-icons" style="margin-top: 1rem;">
-            <p class="contact-details-info">
-              <a href="mailto:aneslam507a@gmail.com">aneslam507a@gmail.com</a>
-            </p>
-          </div>
+        <div class="contact-card">
+          <p style="margin-top:0; font-weight:bold;">البورتفوليو الحي</p>
+          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank">Live Demo Portfolio</a>
         </div>
-
       </div>
     </section>
   </body>
