@@ -1,21 +1,19 @@
-<html lang="en">
+<html lang="ar" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>My Portfolio</title>
+    <title>Islam Anwar - Portfolio</title>
   </head>
   <body>
     <style>
-        
-
 body {
   margin: 0;
   padding: 0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  background-color: #f3f2f7;
 }
-
 
 /* Navbar */
 #navbar {
@@ -26,792 +24,292 @@ body {
   width: 100vw;
   z-index: 10;
   white-space: nowrap;
-
 }
 
 .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  width: 50%;
+  padding: 10px 5%;
+  width: 90%;
   margin: 0 auto;
-  white-space: nowrap;
-
 }
-
-
 
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
   padding: 1rem;
-  text-align: center;
-  font-size: 2em;
-  justify-content: flex-end;
-  white-space: nowrap;
-  max-width: 100%;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #292929;
 }
 
 .logo h1 {
   margin: 0;
-  margin-right: 1rem;
-  padding-left: 10px;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #fff;
-  white-space: nowrap;
-
-}
-
-/* Nav Bar media queries */
-@media screen and (max-width: 1240px) {
-  /* Add rules for screen widths up to 1240 pixels here */
-
-  .nav-links a {
-    padding: 0.3em;
-    white-space: nowrap;
-    font-size: 2em;
-
-  }
-  .logo h1 {
-    justify-content: center;
-    display: flex;
-    white-space: nowrap;
-    font-size: 2em;
-    margin-right: 1.2rem;
-
-
-  }
-  .container {
-    justify-content: center;
-    white-space: nowrap;
-    width: 100%;
-
-  }
-  #navbar {
-    width: 100vw;
-  }
-}
-
-@media screen and (max-width: 850px) and (min-width: 651px) {
-  /* Add rules for screen widths between 651px and 850px here */
-  .nav-links a {
-    padding: 2px;
-    white-space: nowrap;
-    font-size: 1.3em;
-
-  }
-  .logo h1 {
-    justify-content: center;
-    display: flex;
-    white-space: nowrap;
-    font-size: 1.6em;
-    margin-right: 1rem;
-
-
-  }
-  .container {
-    justify-content: flex-start;
-    white-space: nowrap;
-    width: 50%;
-
-  }
-  #navbar {
-    width: 100vw;
-  }
-}
-
-@media screen and (max-width: 450px) {
-    .home {
-        display: none !important;
-    }
-}
-
-@media screen and (max-width: 651px) and (min-width: 360px) {
-  /* Add rules for screen widths between 651px and 850px here */
-  .nav-links a {
-    padding: 0.2em;
-    white-space: nowrap;
-    font-size: 1.2em;
-  }
-  .logo h1 {
-    justify-content: center;
-    display: flex;
-    white-space: nowrap;
-    font-size: 1.2em;
-    margin-right: 1;
-
-
-  }
-  .container {
-    justify-content: flex-start;
-    justify-content: center;
-
-    white-space: nowrap;
-    width: 90%;
-
-  }
-  #navbar {
-    width: 100vw;
-  }
-}
-
-@media  screen and (max-width: 359px) {
-  .nav-links a {
-    padding: 0.2em;
-    white-space: nowrap;
-    font-size: 1em;
-
-  }
-  .logo h1 {
-    justify-content: center;
-    display: flex;
-    white-space: nowrap;
-    font-size: 1em;
-    margin-right: 1;
-
-
-  }
-  .container {
-    justify-content: flex-start;
-    justify-content: center;
-
-    white-space: nowrap;
-    width: 90%;
-
-  }
-  #navbar {
-    width: 100vw;
-  }
 }
 
 /* Welcome section */
-
 #welcome-section {
-  background: linear-gradient(to bottom, #fe6601 20%, #ffa600 60%,#f3f2f7 89%, #f3f2f7 100%); /* The gradient starts with white, then transitions to orange 80% from the bottom, and then back to white */
+  background: linear-gradient(to bottom, #fe6601 20%, #ffa600 60%, #f3f2f7 89%, #f3f2f7 100%);
   height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width: 50%;
-  padding: 0 25%; 
-  
-}
-#welcome-section h1 {
-  z-index: 1;
-
-}
-.mangos {
-  height: 100vh;
-  position: absolute;  
-  z-index: 0;
-  opacity: 0.3;
-  overflow: hidden;
-  
-}
-.mangos.right {
-  right: 0;
-}
-.mangos.left {
-  left: 0;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 10%;
 }
 
 #welcome-section h1 {
-  font-size: 5em;
+  font-size: 3.5em;
   margin: 0;
-  margin-top: -1em;
   color: #fff;
-  padding: 10px;
+  line-height: 1.4;
 }
+
 .mango {
-  width: 8%;
+  width: 50px;
   display: inline-block;
-  margin-left: 20px;
-}
-@media screen and (max-width: 1240px) {
-  /* Add rules for screen widths up to 1240 pixels here */
-  #welcome-section {
-    width: 100vw;
-    padding: 0;
-  }
-  #welcome-section h1 {
-    font-size: 4em;
-    margin-top: -0.5em;
-    padding-left: 1%;
-    margin: 0 auto;
-    width: 70%;
-    padding-left: 10%;
-  }
-  .mango {
-    width: 7%;
-  }
-}
-
-@media screen and (max-width: 850px) and (min-width: 651px) {
-  /* Add rules for screen widths between 651px and 850px here */
-  #welcome-section {
-    width: 100vw;
-    padding: 0;
-  }
-  #welcome-section h1 {
-    font-size: 4em;
-    padding: 0.2em;
-    margin-top: -0.5em;
-  }
-  .mango {
-    width: 10%;
-  }
-}
-
-@media screen and (max-width: 651px) and (min-width: 360px) {
-  /* Add rules for screen widths between 360px and 651px here */
-  #welcome-section h1 {
-    font-size: 3em;
-    padding: 0.2em;
-    margin-top: -0.5em;
-  }
-  .mango {
-    width: 10%;
-  }
-}
-
-@media screen and (max-width: 359px) {
-  /* Add rules for screen widths up to 359 pixels here */
-  #welcome-section h1 {
-    font-size: 2em;
-    padding: 0.2em;
-    margin-top: -0.5em;
-  }
-  .mango {
-    width: 8%;
-  }
+  margin: 0 10px;
+  vertical-align: middle;
 }
 
 /* Projects section */
-
 #projects {
-  padding: 4% 10% 0;
-  width: 80%;
+  padding: 6% 5% 4%;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
   background-color: #f3f2f7;
   color: #292929;
-  height: 100vh;
+}
 
-}
-.section-header {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  
-}
 .section-header h3 {
-  font-size: 4rem;
-  padding: 0;
-  padding-bottom: 2rem;
-  margin: 0;
+  font-size: 3rem;
+  padding-bottom: 1rem;
   margin-bottom: 3rem;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgb(219, 219, 219);
-
-
+  border-bottom: 2px solid rgb(219, 219, 219);
 }
 
 .project-tiles {
   display: flex;
-  justify-content: space-between;
-  align-items:stretch;
-  width: 100%;
-  
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .project-tile {
   background-color: #fff;
   border-radius: 10px;
   width: 30%;
-  padding: 2em;
-  margin: 1rem;
+  min-width: 280px;
+  padding: 1.5em;
   text-align: center;
-  box-shadow: 
-  5px 5px 8px rgba(0,0,0,0.2),
- -5px -5px 8px rgba(255,255,255,0.9);
-  position: relative;
-  max-width: 100%;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-.project-content {
-  text-align: left;
-}
-
-.project-link {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  display: block;
-  width: fit-content;
-  padding-left: 2rem;
-  max-width: 100%;
-  padding-bottom: 1rem;
-  text-align: left;
-}
-
-
-
 
 .project-tile img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   object-fit: cover;
+  height: 180px;
   margin-bottom: 1rem;
-  max-height: 169.63px;
 }
 
 .project-tile h3 {
-  margin: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+  font-size: 1.4em;
+  color: #fe6601;
 }
 
 .project-tile p {
-  margin: 0;
-  margin-bottom: 1em;
-  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  color: #555;
 }
 
-.project-tile a {
+.project-link {
   text-decoration: none;
-  color: #333;
-  font-size: 1.2em;
-  transition: color 0.3s ease-in-out;
-  
+  background-color: #fe6601;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  display: inline-block;
 }
 
-
-.project-tile a:hover {
-  color: #bb2500;
+.project-link:hover {
+  background-color: #d65500;
 }
-
-/* Project section media queries */
-/* Projects section media queries */
-
-@media screen and (max-width: 1240px) {
-  #projects {
-    width: 100vw;
-    padding: 5% 0;
-    height: 170vh;
-  }
-  .project-tiles {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .project-tile {
-    width: 45%;
-    margin: 1rem 0.5rem;
-  }
-  .project-link {
-    max-width: 80%;
-  }
-  .project-tile img {
-    max-height: 180px;
-  }
-}
-
-@media screen and (max-width: 850px) and (min-width: 651px) {
-  .project-tiles {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .project-tile {
-    width: 45%;
-    margin: 1rem 0.5rem;
-  }
-  .project-link {
-    width: 100%;
-    max-width: 80%;
-  }
-  .project-tile img {
-    max-height: 180px;
-  }
-  #projects {
-    width: 100vw;
-    padding: 5% 0;
-    height: 200vh;
-  }
-}
-
-@media screen and (max-width: 651px) and (min-width: 360px) {
-  .project-tiles {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .project-tile {
-    width: 80%;
-    margin: 1rem 0.5rem;
-  }
-  .project-link {
-    max-width: 80%;
-  }
-  .project-tile img {
-    max-height: 180px;
-  }
-  #projects {
-    width: 100vw;
-    padding: 3em 0;
-    height: 200vh;
-  }
-}
-
-@media screen and (max-width: 359px) {
-  .project-tiles {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .project-tile {
-    width: 80%;
-    margin: 1rem 0.5rem;
-  }
-  .project-link {
-    width: 100%;
-    max-width: 80%;
-  }
-  .project-tile img {
-    max-height: 180px;
-  }
-  #projects {
-    width: 100vw;
-    padding: 5% 0;
-    height: 220vh;
-  }
-}
-
 
 /* Contact section */
 #contact {
   width: 100%;
-  height: 100vh;
+  min-height: 80vh;
   background-color: #ff9945;
-
+  padding-bottom: 4rem;
 }
+
+#contact h1 {
+  width: 100%;
+  margin: 0;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+}
+
 #get-in-touch {
   display: flex;
-  justify-content: space-evenly;
-  padding: 2em;
-  background-color: #ff9945;
-  color: white;
-  padding: 2em;
-  font-size: 2em;
-   
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
 }
-#contact h1{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  padding-top: 2em;
-  padding-bottom: 1em;
+
+.links-wrapper, .contact-details {
+  background-color: #fe6601;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
   color: white;
   text-align: center;
-  font-size: 3em;
+  min-width: 280px;
 }
 
-.links {
-  display: flex;
-  align-items:stretch;
-  justify-content: space-around;
-  max-width: 40vw;
-  margin-right: 1em;
-  
-}
-
-.links-wrapper {
-  padding: 1em 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 10px;
-  box-shadow: 
-  5px 5px 8px rgba(0,0,0,0.4),
- -5px -5px 8px rgba(190, 102, 0, 0.3);
-}
-
-
-.links img {
-  width: 2em;
-  margin: 0 0.5rem;
-  text-decoration: none;
-  margin: 0 auto;
-  padding: 0.4rem;
-
-}
 .icons {
-   text-decoration: none;
-
-}
-.icons a {
-  text-decoration: none;
-}
-.details {
-  font-size: 1em;
-  vertical-align: center;
-}
-.details-icon {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  gap: 15px;
+  margin-top: 1rem;
 }
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1em 2em;
-  margin: 0;
-  margin-left: 1rem;
-  border-radius: 10px;
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4), -5px -5px 8px rgba(190, 102, 0, 0.3);
-  background-color: #ff9945;
+
+.icons img, .contact-details-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+.contact-details-info a {
   color: white;
-  font-size: 1em;
-  max-width: 35vw;
-}
-
-.contact-details-header {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.contact-details-icons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-
-}
-
-.contact-details-icon {
-  width: 2em;
-  margin: 0 0.5rem;
   text-decoration: none;
-  margin: 0 auto;
-  padding: 0.4rem;
-
+  font-size: 1.1em;
 }
 
-.contact-details-info {
-  margin: 0.5em 0;
-  padding: 0;
-  max-width: 100%;
-}
-.hyperlink {
-  color: white;
-}
-@media screen and (max-width: 1240px) {
-  #get-in-touch {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-  }
-  .links {
-    margin-right: 0;
-    margin-bottom: 1em;
-    max-width: 80vw;
-    padding: 1em 2em;
-  }
-  .links-wrapper {
-    max-width: 100%;
-  }
-  .contact-details-icons {
-    flex-direction: column;
-  }
-  .contact-details {
-    margin: 0;
-    max-width: 80vw;
-    padding: 1em 2em;
-
-  }
-  .hyperlink {
-    font-size: 0.9em;
-  }
-  
+.contact-details-info a:hover {
+  text-decoration: underline;
 }
 
-@media screen and (max-width: 850px) and (min-width: 651px) {
-  #get-in-touch {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4em;
+@media screen and (max-width: 768px) {
+  #welcome-section h1 {
+    font-size: 2.2em;
   }
-  .links {
-    margin-right: 0;
-    margin-bottom: 1em;
-    max-width: 80vw;
-    padding: 1em 2em;
+  .project-tile {
+    width: 100%;
   }
-  .links-wrapper {
-    max-width: 100%;
-  }
-  .contact-details-icons {
-    flex-direction: column;
-  }
-  .contact-details {
-    margin: 0;
-    max-width: 80vw;
-    padding: 1em 2em;
-
-  }
-  .hyperlink {
-    font-size: 0.9em;
-  }
-  
 }
-
-@media screen and (max-width: 650px) {
-  #get-in-touch {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-  }
-  .links {
-    margin-right: 0;
-    margin-bottom: 1em;
-    max-width: 100vw;
-    padding: 1em 1em;
-  }
-  .links-wrapper {
-    max-width: 100%;
-  }
-  .contact-details-icons {
-    flex-direction: column;
-  }
-  .contact-details {
-    margin: 0;
-    max-width: 100vw;
-    padding: 1em 2em;
-
-  }
-  .hyperlink {
-    font-size: 0.9em;
-  }
-  
-}
-
     </style>
 
     <!-- Navbar section -->
     <nav id="navbar">
       <div class="container">
         <div class="logo">
-          <h1>Mango Media</h1>
+          <h1>Islam Anwar</h1>
         </div>
-        <div class="nav-links home">
+        <div class="nav-links">
           <a href="#welcome-section">Welcome</a>
           <a href="#projects">Projects</a>
-          <a href="#contact">contact</a>
-
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </nav>
-    <img  class="mangos left" src="https://media1.giphy.com/media/KRDZJceW3S0pxD970S/giphy.gif?cid=ecf05e47l6bab3y0flghxi2pbuu5gke0iawevq2f4f173i63&rid=giphy.gif&ct=s" alt="">
-    <img  class="mangos right" src="https://media1.giphy.com/media/KRDZJceW3S0pxD970S/giphy.gif?cid=ecf05e47l6bab3y0flghxi2pbuu5gke0iawevq2f4f173i63&rid=giphy.gif&ct=s" alt="">
 
     <!-- Welcome section -->
     <section id="welcome-section">
-      <h1>Hello!<img class="mango" src="https://cdn-icons-png.flaticon.com/512/2339/2339864.png" alt=""><br>
-        I am Mango<img class="mango" src="https://cdn-icons-png.flaticon.com/512/3137/3137152.png" alt="">
-        <br>A Juicy Digital Marketer</h1>
+      <h1>Hello! <img class="mango" src="https://cdn-icons-png.flaticon.com/512/2339/2339864.png" alt=""> <br>
+        I am Islam Anwar <br>
+        A Web Developer & AI Growth Partner</h1>
     </section>
+
     <!-- Projects -->
     <section id="projects">
       <div class="section-header">
-        <h3>Projects</h3>
+        <h3>My Projects</h3>
       </div>
       <div class="project-tiles">
+        
         <div class="project-tile">
-          <div class="project-content">
-            <a href="https://codepen.io/AlarmedArmadillo/pen/yLqRrjo" target="_blank">
-              <img src="https://m.media-amazon.com/images/S/aplus-media/vc/1d3bb7e0-becf-4b30-8797-e6f232cfb747.__CR0,0,1464,600_PT0_SX1464_V1___.png" alt="Project 1">
-            </a>
-            <h3>Corsair Landing Page Redesign</h3>
-            <p>A redesign the Corsair landing page for a modern and top-notch  user experience.
-
-            </p>
+          <div>
+            <img src="https://m.media-amazon.com/images/S/aplus-media/vc/1d3bb7e0-becf-4b30-8797-e6f232cfb747.__CR0,0,1464,600_PT0_SX1464_V1___.png" alt="E-Commerce D2C Platform">
+            <h3>E-Commerce D2C Platform</h3>
+            <p>Fully functional, highly responsive E-Commerce clothing store platform optimized for mobile UI/UX and seamless conversion rates.</p>
           </div>
-          <a href="https://codepen.io/AlarmedArmadillo/pen/yLqRrjo" target="_blank" class="project-link">Go to project >></a>
+          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="project-link">Live Demo >></a>
         </div>
         
         <div class="project-tile">
-          <div class="project-content">
-            <a href="https://codepen.io/AlarmedArmadillo/pen/MWBMGLZ" target="_blank">
-              <img src="https://cdn.dribbble.com/users/2985218/screenshots/11007223/media/8aa92a8c7b96f2ddeef9e824b9349837.gif" alt="Project 1">
-            </a>
-            <h3>Mango Media Survey Form</h3>
-            <p>A Hubspot inspired survey with easy structure, responsiveness and wonderful user experience.  </p>
+          <div>
+            <img src="https://cdn.dribbble.com/users/2985218/screenshots/11007223/media/8aa92a8c7b96f2ddeef9e824b9349837.gif" alt="AI Growth Systems">
+            <h3>AI Growth & CRO Solutions</h3>
+            <p>Customized AI-driven growth strategies, automated product workflows, and interactive video-generation solutions for digital brands.</p>
           </div>
-          <a href="https://codepen.io/AlarmedArmadillo/pen/MWBMGLZ" target="_blank" class="project-link">Go to project >></a>
+          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="project-link">Live Demo >></a>
         </div>
         
         <div class="project-tile">
-          <div class="project-content">
-            <a href="https://codepen.io/Hyperplexed/pen/xxJaxJj" target="_blank">
-              <img src="https://www.google.com/logos/2023/boba/rc3/cta.gif" alt="Project 1">
-            </a>
-            <h3>Google Mobile Redesign</h3>
-            <p>A block design of the Google Search Mobile version, made by Hyperplexed.</p>
+          <div>
+            <img src="https://www.google.com/logos/2023/boba/rc3/cta.gif" alt="Web Architecture">
+            <h3>Full-Stack Web Solutions</h3>
+            <p>Modern frontend engineering, responsive web designs, performance tuning, and optimized deployment via Netlify.</p>
           </div>
-          <a href="https://codepen.io/Hyperplexed/pen/xxJaxJj" target="_blank" class="project-link">Go to project >></a>
+          <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="project-link">Live Demo >></a>
         </div>
         
       </div>
     </section>
+
     <!-- Connect Section -->
     <section id="contact">
-      <h1>How to contact</h1>
-
+      <h1>Get In Touch</h1>
       <div id="get-in-touch">
         
-        <div class="links">
-          <div class="links-wrapper">
-            
-            <div class="links-header">
-              <h3>Get in touch with me</h3>
-              
-            </div>
-            <div class="icons">
-              <a href="https://www.linkedin.com/in/yourusername" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/72px-LinkedIn_icon_circle.svg.png?20210301220643" alt="LinkedIn Logo">
-              </a>
-              <a href="https://www.facebook.com/yourusername" target="_blank">
-                <img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-facebook-square2-512.png" alt="Facebook Logo">
-              </a>
-              <a href="https://codepen.io/yourusername" target="_blank">
-                <img src="https://cdn.freebiesupply.com/logos/large/2x/codepen-icon-logo-png-transparent.png" alt="Codepen Logo">
-              </a>
-              <a id="profile-link" href="https://github.com/AlarmedArmadillo" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github Logo">
-              </a>
-            </div>
+        <div class="links-wrapper">
+          <h3>Connect with me</h3>
+          <div class="icons">
+            <a href="https://www.linkedin.com/in/المهندسة-اسلام-الفجم-5207503b5" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/72px-LinkedIn_icon_circle.svg.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/eslam-anwar1" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github">
+            </a>
           </div>
-
-          </div>
+        </div>
 
         <div class="contact-details">
-        <div class="contact-details-header">
-            <h3>Armando Barron</h3>
+          <h3>Direct Email</h3>
+          <div class="contact-details-icons" style="margin-top: 1rem;">
+            <p class="contact-details-info">
+              <a href="mailto:aneslam507a@gmail.com">aneslam507a@gmail.com</a>
+            </p>
+          </div>
         </div>
-        <div class="contact-details-icons">
-            <a href="mailto:armando.bar.per@gmail.com"><img class="contact-details-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="gmail"></a>
-            <p class="contact-details-info"><a class="hyperlink" href="mailto:armando.bar.per@gmail.com">armando.bar.per@gmail.com</a></p>
-        </div>
-      </div>
 
+      </div>
     </section>
   </body>
 </html>
