@@ -30,29 +30,11 @@
         line-height: 1.8;
       }
 
-      /* Top Announcement Bar (مستوحى من شريط المتجر العلوي) */
-      .top-bar {
-        background-color: #0f172a;
-        color: #e2e8f0;
-        font-size: 0.88em;
-        padding: 8px 5%;
-        border-bottom: 1px solid var(--border);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .top-bar a {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: bold;
-      }
-
       /* Navbar */
       #navbar {
         background-color: rgba(11, 15, 25, 0.95);
         backdrop-filter: blur(12px);
-        position: sticky;
+        position: fixed;
         top: 0;
         width: 100%;
         z-index: 1000;
@@ -63,7 +45,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 5%;
+        padding: 18px 5%;
         max-width: 1300px;
         margin: 0 auto;
       }
@@ -77,7 +59,7 @@
 
       .nav-links {
         display: flex;
-        gap: 25px;
+        gap: 30px;
       }
 
       .nav-links a {
@@ -94,15 +76,22 @@
 
       /* Hero Section */
       #welcome-section {
-        padding: 80px 10% 40px;
+        background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
+        flex-direction: column;
+        padding: 120px 10% 60px;
       }
 
       #welcome-section h1 {
-        font-size: 3em;
-        margin: 0 0 15px 0;
+        font-size: 3.5em;
+        margin: 0 0 20px 0;
         font-weight: 900;
         color: #ffffff;
+        letter-spacing: -1px;
       }
 
       #welcome-section h1 span {
@@ -110,20 +99,186 @@
       }
 
       #welcome-section p {
-        font-size: 1.2em;
+        font-size: 1.25em;
         color: var(--text-muted);
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         max-width: 750px;
-        margin-left: auto;
-        margin-right: auto;
       }
 
-      /* Interactive Image Slider (سلايدر المتجر التفاعلي) */
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn-main {
+        background-color: var(--accent);
+        color: #0b0f19;
+        padding: 14px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+      }
+
+      .btn-main:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-3px);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid var(--border);
+        padding: 12px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* Sections General */
+      section {
+        padding: 100px 5% 70px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h3 {
+        font-size: 2.6rem;
+        margin-bottom: 15px;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      .section-header p {
+        color: var(--text-muted);
+        font-size: 1.15em;
+      }
+
+      /* Grid Cards */
+      .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border-radius: 20px;
+        padding: 35px 30px;
+        border: 1px solid var(--border);
+        transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      }
+
+      .card img.card-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 25px;
+      }
+
+      .card h3 {
+        color: #fff;
+        font-size: 1.45em;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      /* Animated Glowing Portfolio Banner */
+      .portfolio-banner {
+        background: linear-gradient(135deg, #111827, #0b0f19);
+        border: 2px solid var(--accent);
+        border-radius: 24px;
+        padding: 60px 40px;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);
+        animation: glowingBorder 3s infinite alternate;
+        transition: transform 0.4s ease;
+      }
+
+      .portfolio-banner:hover {
+        transform: scale(1.02);
+      }
+
+      @keyframes glowingBorder {
+        0% {
+          border-color: #f59e0b;
+          box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+        }
+        50% {
+          border-color: #fbbf24;
+          box-shadow: 0 0 35px rgba(245, 158, 11, 0.5), inset 0 0 15px rgba(245, 158, 11, 0.1);
+        }
+        100% {
+          border-color: #d97706;
+          box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+        }
+      }
+
+      /* Animated Pulse Button */
+      .pulse-btn {
+        animation: pulseAnimation 2s infinite;
+      }
+
+      @keyframes pulseAnimation {
+        0% {
+          box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 18px rgba(245, 158, 11, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+        }
+      }
+
+      .badge {
+        background-color: rgba(245, 158, 11, 0.15);
+        color: var(--accent);
+        padding: 6px 18px;
+        border-radius: 30px;
+        font-size: 0.9em;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+      }
+
+      /* Slider Section (تحت الخدمات) */
       .slider-container {
         position: relative;
         max-width: 1100px;
         margin: 40px auto;
-        border-radius: 20px;
+        border-radius: 24px;
         overflow: hidden;
         border: 2px solid var(--accent);
         box-shadow: 0 0 30px rgba(245, 158, 11, 0.25);
@@ -169,7 +324,6 @@
         margin-bottom: 20px;
       }
 
-      /* Slider Arrow Navigations (أسهم سلايدر المتجر) */
       .slider-btn {
         position: absolute;
         top: 50%;
@@ -197,81 +351,15 @@
       .prev-btn { right: 20px; }
       .next-btn { left: 20px; }
 
-      .btn-main {
-        background-color: var(--accent);
-        color: #0b0f19;
-        padding: 12px 30px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s;
-        display: inline-block;
-      }
-
-      .btn-main:hover {
-        background-color: var(--accent-hover);
-        transform: translateY(-2px);
-      }
-
-      /* Sections General */
-      section {
-        padding: 80px 5% 60px;
-        max-width: 1300px;
-        margin: 0 auto;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .section-header h3 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        font-weight: 800;
-        color: #fff;
-      }
-
-      /* Grid Cards */
-      .grid-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-      }
-
-      .card {
-        background-color: var(--card-bg);
-        border-radius: 20px;
-        padding: 35px 30px;
-        border: 1px solid var(--border);
-        transition: transform 0.3s, border-color 0.3s;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .card:hover {
-        transform: translateY(-8px);
-        border-color: var(--accent);
-      }
-
-      .card img.card-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 20px;
-      }
-
-      /* Floating WhatsApp Icon */
+      /* Floating WhatsApp Button */
       .whatsapp-float {
         position: fixed;
         bottom: 30px;
         left: 30px;
         background-color: #25d366;
         color: white;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -286,8 +374,8 @@
       }
 
       .whatsapp-float svg {
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
         fill: white;
       }
 
@@ -308,12 +396,13 @@
 
       .contact-card {
         background-color: var(--card-bg);
-        padding: 35px;
+        padding: 40px;
         border-radius: 16px;
         border: 1px solid var(--border);
-        min-width: 280px;
-        text-decoration: none;
+        min-width: 300px;
         transition: transform 0.3s;
+        text-decoration: none;
+        display: block;
       }
 
       .contact-card:hover {
@@ -324,17 +413,22 @@
       .contact-card h4 {
         color: #fff;
         margin: 0 0 10px 0;
+        font-size: 1.2em;
       }
 
       .contact-card span {
         color: var(--accent);
         font-weight: bold;
+        font-size: 1.1em;
       }
 
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
           gap: 15px;
+        }
+        #welcome-section h1 {
+          font-size: 2.3em;
         }
         .slide {
           height: 350px;
@@ -343,12 +437,6 @@
     </style>
   </head>
   <body>
-
-    <!-- Top Announcement Bar (مستوحى من المتجر) -->
-    <div class="top-bar">
-      <span>🚀 خصم خاص لطلاب تكنولوجيا المعلومات ومشاريع التخرج</span>
-      <a href="https://wa.me/970594794110" target="_blank">تواصل مباشر عبر واتساب 💬</a>
-    </div>
 
     <!-- Floating WhatsApp Icon -->
     <a href="https://wa.me/970594794110" target="_blank" class="whatsapp-float" title="تواصل عبر واتساب">
@@ -363,9 +451,10 @@
         </div>
         <div class="nav-links">
           <a href="#welcome-section">الرئيسية</a>
-          <a href="#portfolio-slider">معرض الأعمال</a>
+          <a href="#portfolio">الأعمال</a>
           <a href="#services">الخدمات الاحترافية</a>
           <a href="#students">خدمات الطلاب</a>
+          <a href="#slider-section">استعراض المشاريع</a>
           <a href="#contact">تواصل معنا</a>
         </div>
       </div>
@@ -375,15 +464,104 @@
     <section id="welcome-section">
       <h1>هندسة وتطوير الويب <br><span>وتصميم واجهات المستخدم UI/UX</span></h1>
       <p>شريكتكِ التقنية المعتمدة لابتكار تجارب مستخدم مذهلة، تطوير المتاجر الإلكترونية، ودعم المشاريع الرقمية والطلابية بمعايير عالمية.</p>
+      <div class="hero-buttons">
+        <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="btn-main pulse-btn">🔗 استعراض البورتفوليو الحي</a>
+        <a href="https://wa.me/970594794110" target="_blank" class="btn-secondary">راسلني عبر واتساب</a>
+      </div>
+    </section>
 
-      <!-- Interactive Slider Box (السلايدر التفاعلي مثل المتجر) -->
-      <div class="slider-container" id="portfolio-slider">
+    <!-- Portfolio Glowing Banner -->
+    <section id="portfolio">
+      <div class="portfolio-banner">
+        <span class="badge">معرض الأعمال الحي</span>
+        <h3 style="font-size: 2.2em; margin-bottom: 15px;">نموذج متجر إلكتروني تفاعلي (D2C)</h3>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 35px auto;">استعرض منصة تجارية متكاملة تم هندستها وتصميمها بأعلى كفاءة وسرعة لتجربة مستخدم استثنائية.</p>
+        <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="btn-main pulse-btn">زيارة المعاينة الحية الآن 🚀</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="section-header">
+        <h3>خدماتي الاحترافية المتقدمة</h3>
+        <p>حلول متكاملة تدمج بين جمال التصميم وقوة البرمجة</p>
+      </div>
+      <div class="grid-cards">
+        
+        <div class="card">
+          <div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="UI/UX Design">
+            <h3>تصميم واجهات وتجربة المستخدم (UI/UX)</h3>
+            <p>تصميم واجهات تفاعلية جذابة وسهلة الاستخدام، دراسة سلوك العملاء، وبناء نماذج أولية (Wireframes & Prototypes) تضمن أعلى تفاعل.</p>
+          </div>
+          <a href="https://wa.me/970594794110?text=أهلاً مهندسة إسلام، أرغب بالاستفسار عن خدمة تصميم UI/UX" target="_blank" class="btn-main" style="text-align: center; display: block; padding: 12px;">اطلب الخدمة عبر واتساب</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Web Development">
+            <h3>تطوير وبرمجة تطبيقات الويب</h3>
+            <p>بناء مواقع ومنصات ويب عصرية، متجاوبة مع كافة الأجهزة، باستخدام أحدث التقنيات البرمجية (React, JavaScript, HTML5/CSS3) وبأعلى سرعة أداء.</p>
+          </div>
+          <a href="https://wa.me/970594794110?text=أهلاً مهندسة إسلام، أرغب بالاستفسار عن تطوير موقع ويب" target="_blank" class="btn-main" style="text-align: center; display: block; padding: 12px;">اطلب الخدمة عبر واتساب</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="CRO & AI">
+            <h3>تحسين المتاجر وزيادة المبيعات (CRO)</h3>
+            <p>تحليل مسارات الشراء، معالجة نقاط الضعف في المتاجر الإلكترونية، ودمج حلول الذكاء الاصطناعي لتوليد المحتوى ورفع معدلات التحويل والأرباح.</p>
+          </div>
+          <a href="https://wa.me/970594794110?text=أهلاً مهندسة إسلام، أرغب بالاستفسار عن تحسين المتاجر CRO" target="_blank" class="btn-main" style="text-align: center; display: block; padding: 12px;">اطلب الخدمة عبر واتساب</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Student Services Section -->
+    <section id="students" style="background-color: rgba(17, 24, 39, 0.5);">
+      <div class="section-header">
+        <h3>خدمات وعروض خاصة لطلاب التكنولوجيا</h3>
+        <p>نرافقك خطوة بخطوة للتميز الأكاديمي والمهني</p>
+      </div>
+      <div class="grid-cards">
+        
+        <div class="card">
+          <div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Student Projects">
+            <span class="badge">دعم أكاديمي متكامل</span>
+            <h3>مشاريع التخرج البرمجية</h3>
+            <p>إشراف هندسي وتنفيذ متكامل لمشاريع تخرج تخصصات تكنولوجيا المعلومات وهندسة البرمجيات، من الفكرة والتصميم وحتى البرمجة والتوثيق.</p>
+          </div>
+          <a href="https://wa.me/970594794110?text=مرحباً مهندسة إسلام، أرغب بمساعدة في مشروع تخرج" target="_blank" class="btn-main" style="text-align: center; display: block; padding: 12px;">احجز مساعدة لمشروعك</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Mentorship">
+            <span class="badge">توجيه خاص</span>
+            <h3>جلسات الإرشاد وتطوير المهارات</h3>
+            <p>جلسات تدريبية وتوجيهية عملية في أسس البرمجة، تصميم الواجهات، وحل التحديات البرمجية لبناء أساس مهني قوي ومستقبل واعد.</p>
+          </div>
+          <a href="https://wa.me/970594794110?text=مرحباً مهندسة إسلام، أرغب بحجز جلسة توجيهية وبرمجية" target="_blank" class="btn-main" style="text-align: center; display: block; padding: 12px;">احجز جلستك الآن</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Slider Section (الموقع الجديد: تحت قسم الخدمات بالأسفل) -->
+    <section id="slider-section">
+      <div class="section-header">
+        <h3>معرض صور حي ومعاينة للمشاريع</h3>
+        <p>تصفحي الشريحة التفاعلية للتعرف على نماذج الأعمال المباشرة</p>
+      </div>
+
+      <div class="slider-container">
         <button class="slider-btn prev-btn" onclick="moveSlide(-1)">❯</button>
         <button class="slider-btn next-btn" onclick="moveSlide(1)">❮</button>
 
         <div class="slider-wrapper" id="sliderWrapper">
           
-          <!-- Slide 1 -->
           <div class="slide">
             <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80" alt="Hamada Center Fashion D2C">
             <div class="slide-content">
@@ -393,7 +571,6 @@
             </div>
           </div>
 
-          <!-- Slide 2 -->
           <div class="slide">
             <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1200&q=80" alt="UI/UX Prototyping">
             <div class="slide-content">
@@ -403,7 +580,6 @@
             </div>
           </div>
 
-          <!-- Slide 3 -->
           <div class="slide">
             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Student Projects">
             <div class="slide-content">
@@ -417,30 +593,54 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+    <!-- Contact Section -->
+    <section id="contact">
       <div class="section-header">
-        <h3>خدماتي الاحترافية المتقدمة</h3>
+        <h3>تواصل معي مباشرة</h3>
+        <p>انقر على أيقونة التواصل للانتقال الفوري وبدء العمل معاً</p>
       </div>
-      <div class="grid-cards">
-        <div class="card">
-          <div>
-            <img class="card-img" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="UI/UX Design">
-            <h3>تصميم واجهات وتجربة المستخدم (UI/UX)</h3>
-            <p>تصميم واجهات تفاعلية جذابة وسهلة الاستخدام، دراسة سلوك العملاء، وبناء نماذج أولية (Wireframes & Prototypes) تضمن أعلى تفاعل.</p>
-          </div>
-          <a href="https://wa.me/970594794110" target="_blank" class="btn-main" style="text-align: center; display: block;">اطلب الخدمة</a>
-        </div>
+      <div class="contact-box">
+        
+        <a href="https://wa.me/970594794110" target="_blank" class="contact-card">
+          <h4>محادثة واتساب الفورية</h4>
+          <span>انقر للمراسلة مباشرة 💬</span>
+        </a>
 
-        <div class="card">
-          <div>
-            <img class="card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Web Development">
-            <h3>تطوير وبرمجة تطبيقات الويب</h3>
-            <p>بناء مواقع ومنصات ويب عصرية، متجاوبة مع كافة الأجهزة، باستخدام أحدث التقنيات البرمجية (React, JavaScript, HTML5/CSS3).</p>
-          </div>
-          <a href="https://wa.me/970594794110" target="_blank" class="btn-main" style="text-align: center; display: block;">اطلب الخدمة</a>
-        </div>
+        <a href="https://www.linkedin.com/in/%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%81%D8%AC%D9%85-5207503b5/" target="_blank" class="contact-card">
+          <h4>الملف المهني (LinkedIn)</h4>
+          <span>زيارة البروفايل 🔗</span>
+        </a>
 
-        <div class="card">
-          <div>
-            <img class="card-img" src="
+        <a href="https://bucolic-zabaione-8d2a33.netlify.app" target="_blank" class="contact-card">
+          <h4>البورتفوليو الحي</h4>
+          <span>معاينة المشاريع 🚀</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- JavaScript Slider Logic -->
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const sliderWrapper = document.getElementById('sliderWrapper');
+
+      function showSlide(index) {
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
+
+        sliderWrapper.style.transform = `translateX(${currentSlide * 100}%)`;
+      }
+
+      function moveSlide(direction) {
+        showSlide(currentSlide + direction);
+      }
+
+      setInterval(() => {
+        moveSlide(1);
+      }, 4000);
+    </script>
+
+  </body>
+</html>
